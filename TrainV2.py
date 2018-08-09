@@ -1,7 +1,6 @@
 file = open('Traindata1.txt', 'r')
 st = file.readline()
 st1 = st.split()
-print(st1)
 kolst = int(st1[0])
 kolhours = int(st1[1])
 vmest = int(st1[2])
@@ -12,7 +11,6 @@ for i in range(kolst):
    st1[0]=int(st1[0])
    st1[1]=int(st1[1])
    st1[2]=int(st1[2])
-   print(st1)
    std.append(st1)
 pipl=[std[0][0]]
 apipl=[std[0][1]]
@@ -22,7 +20,6 @@ for i in range(1,kolst):
     pipl.append(std[i][0])
     apipl.append(std[i][1])
     maxpipl.append(std[i][2])
-print(pipl,apipl,maxpipl)
 
 def coltrn():
    global koltrn
@@ -58,7 +55,6 @@ def prognoz(klh):
 i=0
 koltrn=0
 for i in range(kolhours):
-   print('час ',i,'   ',pipl)
    klh=kolhours-i
    if prognoz(klh) < kolhours:
       coltrn()
@@ -66,6 +62,5 @@ for i in range(kolhours):
    for j in range(kolst):
       pipl[j]=pipl[j]+apipl[j]
    pass
-print('час ',i,'   ',pipl)
-print('количество поездов = ',koltrn)
+print(koltrn)
 
