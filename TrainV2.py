@@ -12,7 +12,6 @@ for i in range(kolst):
    st1[0]=int(st1[0])
    st1[1]=int(st1[1])
    st1[2]=int(st1[2])
-   print(st1)
    std.append(st1)
 pipl=[std[0][0]]
 apipl=[std[0][1]]
@@ -22,50 +21,55 @@ for i in range(1,kolst):
     pipl.append(std[i][0])
     apipl.append(std[i][1])
     maxpipl.append(std[i][2])
-print(pipl,apipl,maxpipl)
+print(pipl)
+print(apipl)
+print(maxpipl)
 
 def coltrn():
    global koltrn
-   k=0
    trn=0
-   while k < kolst:
+   for k in range(kolst):
       if (trn+pipl[k]) <= vmest:
          trn=trn+pipl[k]
          pipl[k]=0
       else:
          pipl[k]=trn+pipl[k]-vmest
          break
-      k=k+1
+      pass
    koltrn=koltrn+1
 def prognoz(klh):
    sos='not'
    dpl=pipl
-   i=1
-   while i < klh:
-      j=0
-      while j < kolst:
+   i=0
+   for i in range(0,klh):
+      for j in range(kolst):
          dpl[j]=dpl[j]+apipl[j]
          if (dpl[j] < maxpipl[j]):
             pass
          else:
             sos='yes'
             break
-         j=j+1
+         pass
       if sos=='yes':
          break
-      i=i+1
+      pass
    return(i)
-i=0
+
 koltrn=0
 for i in range(kolhours):
    print('час ',i,'   ',pipl)
    klh=kolhours-i
-   if prognoz(klh) < kolhours:
+   print('klh=',klh,'prognoz=',prognoz(klh),sum(pipl))
+   if prognoz(klh) < kolhours and 5 > vmest:
+      print('час ',i,'   ',pipl)
       coltrn()
+      print('час ',i,'   ',pipl)
    j=0
+   print('час ',i,'   ',pipl)
    for j in range(kolst):
       pipl[j]=pipl[j]+apipl[j]
    pass
-print('час ',i,'   ',pipl)
+   print('час ',i,'   ',pipl)
 print('количество поездов = ',koltrn)
+print('github')
 
