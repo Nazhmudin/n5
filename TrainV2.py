@@ -38,7 +38,7 @@ def coltrn():
    koltrn=koltrn+1
 def prognoz(klh):
    sos='not'
-   dpl=pipl
+   dpl=pipl.copy()
    i=0
    for i in range(0,klh):
       for j in range(kolst):
@@ -57,7 +57,7 @@ def prognoz(klh):
 koltrn=0
 for i in range(kolhours):
    klh=kolhours-i
-   print('klh=',klh,'prognoz=',prognoz(klh),sum(pipl))
+   print('klh=',klh,'prognoz=',prognoz(klh),sum(pipl), pipl)
    if prognoz(klh) < kolhours and 5 > vmest:
       print('час ',i,'   ',pipl)
       coltrn()
