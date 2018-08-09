@@ -20,12 +20,9 @@ for i in range(1,kolst):
     pipl.append(std[i][0])
     apipl.append(std[i][1])
     maxpipl.append(std[i][2])
-<<<<<<< HEAD
 print(pipl)
 print(apipl)
 print(maxpipl)
-=======
->>>>>>> 19465824a10795fd4cadf9bd7a095d98056fd98f
 
 def coltrn():
    global koltrn
@@ -70,11 +67,6 @@ for i in range(kolhours):
    for j in range(kolst):
       pipl[j]=pipl[j]+apipl[j]
    pass
-<<<<<<< HEAD
    print('час ',i,'   ',pipl)
 print('количество поездов = ',koltrn)
-print('github')
-=======
-print(koltrn)
->>>>>>> 19465824a10795fd4cadf9bd7a095d98056fd98f
 
